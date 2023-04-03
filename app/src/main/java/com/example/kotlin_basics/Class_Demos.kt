@@ -2,8 +2,10 @@ package com.example.kotlin_basics
 
 
 fun main() {
-    val personInstance = Person("Hii", 5)
+    val personInstance = Person("Hii", 5,50)
     val person1Instance = Person1("Nishant", "Sanandiya", 20);
+    val myClassInstance = myClass("sdf",5)
+    println(myClassInstance.numberInt)
 }
 
 //Primary constructor :- written with class name
@@ -11,7 +13,7 @@ fun main() {
 //init block run before constructor.
 
 class Person constructor(age: Int, age2: Int) {
-    constructor(name: String, age3: Int) : this(6, age3) {
+    constructor(name: String, age3: Int,age4:Int) : this(age4, age3) {
         println("Constructor called")
     }
 
@@ -35,5 +37,22 @@ public class Person1(
 
     public fun get_Age(): Int {
         return this.age_Number
+    }
+}
+
+
+
+/*
+    we can define one or more secondary constructor. like, myclass
+*/
+
+
+class myClass{
+    var numberInt = 0;
+    constructor(id: Int){
+        this.numberInt = id
+    }
+    constructor(name: String, id: Int){
+        this.numberInt = id
     }
 }
